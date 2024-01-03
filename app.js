@@ -10,13 +10,15 @@ const fromEuroToDollar = function(valueInEuro) {
 }
 
 const fromDollarToYen = function(valueInDollar){
-    let valueInYen = valueInDollar * 146.26;
+    let valueInEuro = valueInDollar / oneEuroIs["USD"];
+    let valueInYen = valueInEuro * oneEuroIs ["JPY"]
     return valueInYen;
 }
 
 const fromYenToPound = function(valueInYen){
-    let valueInPound = valueInYen * 0.0055;
-    return valueInPound;
+    let valueInEuro = valueInYen / oneEuroIs["JPY"]
+    let valueInPound = valueInEuro * oneEuroIs["GBP"]
+    return valueInPound
 }
 
 module.exports = {  fromEuroToDollar, fromDollarToYen, fromYenToPound };
